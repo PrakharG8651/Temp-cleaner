@@ -91,7 +91,7 @@ The Linux script cleans:
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/cross-platform-cleaner.git
+git clone https://github.com/PrakharG8651/Temp-cleaner.git
 ```
 
 Or download the ZIP file and extract it.
