@@ -2,14 +2,20 @@
 echo Cleaning temporary files...
 echo.
 
-echo Cleaning user temp files...
-del /q /f /s "%temp%\*" >nul 2>&1
-for /d %%D in ("%temp%\*") do rd /s /q "%%D" >nul 2>&1
+:: Delete user temp files
+echo Deleting %temp% folder contents...
+del /q /f /s "%temp%\*"
+rd /s /q "%temp%"
 
-echo Cleaning Windows temp files...
-del /q /f /s "C:\Windows\Temp\*" >nul 2>&1
-for /d %%D in ("C:\Windows\Temp\*") do rd /s /q "%%D" >nul 2>&1
+:: Delete system temp files
+echo Deleting C:\Windows\Temp...
+del /q /f /s "C:\Windows\Temp\*"
+rd /s /q "C:\Windows\Temp"
 
+:: Delete prefetch files (needs admin)
+echo Deleting C:\Windows\Prefetch...
+del /q /f /s "C:\Windows\Prefetch\*"
 echo.
-echo Cleanup complete.
+
+echo Cleanup complete!
 pause
